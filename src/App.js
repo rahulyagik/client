@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box, Grid } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+import InputContainer from "./components/InputContainer";
+import ListContainer from "./components/ListContainer";
+
+const useStyles = makeStyles({
+  root: {
+    marginTop: "50px",
+  },
+});
 
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box className={classes.root}>
+      <Grid container>
+        <Grid item sm={6}>
+          <InputContainer />
+        </Grid>
+        <Grid item sm={6}>
+          <ListContainer />
+        </Grid>
+      </Grid>
+    </Box>
   );
 }
 
